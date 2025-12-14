@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title> Programming Quiz</title>
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap theme-default" id="app">
+    <header>
+      <div class="logo" id="logo">QZ</div>
+      <div>
+        <h1>Programming Quiz</h1>
+        <p class="lead">Sharpen frontend fundamentals with focused, interactive quizzes.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="left-col card">
+        <form id="startForm" class="fade-in" autocomplete="off">
+          <label>Full name</label>
+          <input required id="fullName" class="input" placeholder="Your name" />
+
+          <label style="margin-top:12px;">Email</label>
+          <input required id="email" type="email" class="input" placeholder="you@example.com" />
+
+          <label style="margin-top:12px;">Choose language</label>
+          <div class="lang-select" id="langSelect">
+            <!-- JS will render language buttons -->
+          </div>
+
+          <label style="margin-top:12px;">Number of questions</label>
+          <div style="display:flex; gap:10px; margin-top:6px;">
+            <label class="lang-option" id="q7"><input type="radio" name="qcount" value="7" checked style="margin-right:8px;"> 7</label>
+            <label class="lang-option" id="q10"><input type="radio" name="qcount" value="10" style="margin-right:8px;"> 10</label>
+          </div>
+
+          <div style="margin-top:16px; display:flex; gap:8px;">
+            <button class="btn" id="startBtn" type="submit">Start Quiz</button>
+            <button class="btn secondary" id="demoBtn" type="button">Demo Questions</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="right-col">
+        <div id="quizArea" class="card fade-in" style="min-height:260px; display:none;">
+          <div class="quiz-header">
+            <div>
+              <div class="meta" id="userMeta">Player: —</div>
+              <div class="meta" id="langMeta">Language: —</div>
+            </div>
+            <div style="width:40%;">
+              <div style="display:flex; gap:8px; align-items:center;">
+                <div class="pill" id="qMeta">Q 0 / 0</div>
+                <div style="width:100%;">
+                  <div class="progress" aria-hidden><i id="progBar"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-card" id="questionCard">
+            <!-- question & options -->
+            <h2 class="question-text" id="questionText">Question text</h2>
+            <div class="options" id="optionsList"></div>
+
+            <div class="controls">
+              <div class="left-controls">
+                <button class="btn secondary" id="prevBtn" type="button">Previous</button>
+                <button class="btn secondary" id="nextBtn" type="button">Next</button>
+                <div class="pill" id="timerPill" style="display:none">Time: <span id="timeLeft">--</span></div>
+              </div>
+              <div>
+                <button class="btn" id="submitBtn" type="button" disabled>Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="resultCard" class="question-card" style="display:none; margin-top:14px;">
+            <div class="result">
+              <div class="detail" id="resultText">You scored</div>
+              <div class="score" id="scoreValue">0 / 0</div>
+              <div class="detail" id="percentText">0%</div>
+              <div style="display:flex; gap:8px; justify-content:center; margin-top:12px;">
+                <button class="btn" id="retryBtn">Retry</button>
+                <button class="btn secondary" id="startOverBtn">Start Over</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="placeholder" class="card fade-in" style="text-align:center; padding:34px;">
+          <h3 style="margin-top:0;">Ready for a focused practice session?</h3>
+          <p class="muted">Fill the form on the left and start. The quiz is fully offline and easy to extend.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      -Ruchita V Bhosale-
+    </footer>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
